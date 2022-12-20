@@ -1,0 +1,464 @@
+/* --- Static Web Design --- */
+.container {
+  padding: 0 2rem;
+}
+
+.main {
+  display: flex; flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.main .home_sect {
+  height: calc(100vh - 81px);
+  transform: translateY(80px);
+}
+
+/* Part 1 - Landing Section */
+.main .home_sect.home {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main .home_sect .intro .title a {
+  color: #0070f3;
+  text-decoration: none;
+}
+
+.main .home_sect .intro .title {
+  margin: 0;
+  line-height: 1.15;
+  font-size: 4.5rem;
+  text-align: center;
+}
+
+.main .home_sect .intro .introduction {
+  width: 600px;
+  font-size: 1rem;
+  line-height: 1;
+  margin: 10px auto;
+}
+
+.social {
+  width: 200px;
+
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: auto;
+}
+
+.social .icon {
+  width: 50px;
+  height: 50px;
+  padding: 12px;
+
+  color: #0070f3;
+  border: 1px solid #0070f3;
+}
+
+.main .home_sect .intro .title a:hover,
+.main .home_sect .intro .title a:focus,
+.main .home_sect .intro .title a:active {
+  text-decoration: underline;
+}
+
+.social .icon:hover {
+  padding: 8px;
+  border-radius: 5px;
+  box-shadow: +1px +1px 1px #0070f3,
+              +1px -1px 1px #0070f3,
+              -1px +1px 1px #0070f3,
+              -1px -1px 1px #0070f3;
+}
+
+
+
+/* Part 2 - About Section */
+.main .home_sect.about {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.main .home_sect.about .about_header {
+  max-width: 50%;
+  height: 400px;
+  margin-right: 20px;
+}
+
+.main .home_sect .sect_head {
+  font-size: 1.4rem;
+  margin-left: 30px;
+  
+  color: #0070f3;
+  text-transform: uppercase;
+  text-decoration: 1px double underline;
+  text-align: left;
+}
+
+.main .home_sect.about .about_header .about_desc {
+  height: 400px;
+  overflow-y: auto;
+}
+
+.main .home_sect.about .about_header p.about_par {
+  margin: 15px 20px;
+  margin-top: 0;
+  font-size: 1rem;
+  line-height: 1.3;
+
+  text-align: justify;
+  position: relative;
+}
+
+.main .home_sect.about .img_container {
+  width: max(300px,50%);
+  height: 400px;
+  
+  position: relative;
+  border-radius: 10px;
+  border: 1px solid white;
+  box-shadow: +3px +3px 3px black,
+              +3px -3px 3px black,
+              -3px +3px 3px black,
+              -3px -3px 3px black;
+}
+
+.main .home_sect.about .about_header p.about_par a:hover {
+  text-decoration: underline;
+}
+
+
+/* Part 3 - Skills Section */
+.main .home_sect.skills {
+  width: 100%;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: left;
+}
+
+.main .home_sect.skills .skills_group {
+  text-align: left;
+  margin: 20px 0 20px 0;
+}
+
+.main .home_sect.skills .skills_group .group_head {
+  color: #031fbd;
+  text-decoration: double underline;
+  font-size: medium;
+}
+
+.main .home_sect.skills .skills_group .skills_grid {
+  display: flex;
+  justify-content: center;
+  align-items: left;
+  width: min-content;
+  text-align: left;
+}
+
+.main .home_sect.skills .skills_group .skills_grid .grid_item {
+  width: 150px;
+  height: 100px;
+  margin: 10px;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  padding: 10px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #0095ff;
+  border: 2px solid #031fbd;
+  border-radius: 10px;
+  text-align: center;
+  font-family: 'Courier New', Courier, monospace;
+  font-style: oblique;
+  font-weight: bolder;
+  text-shadow:+1px +1px 1px #0009,
+              +1px -1px 1px #0009,
+              -1px +1px 1px #0009,
+              -1px -1px 1px #0009;
+}
+
+.main .home_sect.skills .skills_group .skills_grid .grid_item .icon {
+  width: 40px;
+  height: 40px;
+  
+  display: block;
+  color: #0070f3;
+  transition: 0.1s;
+}
+
+.main .home_sect.skills .skills_group .skills_grid .grid_item:hover {
+  background-color: #0070f3;
+  cursor: pointer;
+  color: white;
+}
+
+.main .home_sect.skills .skills_group .skills_grid .grid_item:hover .icon {
+  width: 50px;
+  height: 50px;
+  color: white;
+  transition: 0.1s;
+}
+
+
+/* Part 4 - Projects Section */
+.main .home_sect.projects {
+  width: 100%;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: left;
+}
+
+.main .home_sect.projects .projects_grid {
+  width: 100%;
+  height: 100%;
+  column-gap: 20px;
+
+  display: grid;
+  grid-template-columns: 330px 330px;
+  grid-template-rows: auto;
+  justify-content: center;
+  align-items: baseline;
+}
+
+.main .home_sect.projects .projects_grid .grid_item {
+  height: 90%;
+  max-height: 40vh;
+  margin: 10px;
+
+  justify-self: stretch;
+  border-radius: 10px;
+  position: relative;
+  border: 1px solid black;
+  border-radius: 10px;
+  box-shadow: +5px +5px 5px #0059,
+        inset +5px -1px 1px #0055,
+        inset -5px -1px 1px #0055,
+        inset -1px -5px 1px #0055,
+        inset -1px +5px 1px #0055;
+  background: center/contain no-repeat url('/bellabeat.jpg') #75c1f8;
+  /* background: #75c1f8; */  /* Light Mode (Default) */
+  /* background: #123e5e; */  /* Dark-Mode            */
+}
+
+.main .home_sect.projects .projects_grid .grid_item .project_caption {
+  width: calc(100% - 15px);
+  height: 25px;
+  line-height: 1.3;
+  font-size: medium;
+  transform: translateX(-50%);
+  
+  font-family: Cambria, 'Times New Roman', Times, serif;
+  position: absolute;
+  bottom: 8px; left: 50%;
+  font-style: italic;
+  background: #042f61;
+  border: 1px solid #0057;
+  border-radius: 5px;
+  text-shadow:+1px +1px 1px #0008;
+  color: white;
+}
+
+.main .home_sect.projects .projects_grid .grid_item .grid_modal {
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+
+  position: absolute;
+  top: 0; left: 0;
+}
+
+.main .home_sect.projects .projects_grid .grid_item .grid_modal .info_btn {
+  width: 150px;
+  height: 40px;
+  font-size: 1.2rem;
+  
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  background: white;
+  border: 1px solid #0009;
+  border-radius: 12px;
+  position: relative;
+  top: 100px;
+}
+
+.main .home_sect.projects .projects_grid .grid_item .grid_modal .info_btn a {
+  color: black;
+  transition: 0s;
+}
+
+.main .home_sect.projects .projects_grid .grid_item:hover .grid_modal {
+  opacity: 0.7;
+  background: #013a7cdb;
+  cursor: pointer;
+}
+
+.main .home_sect.projects .projects_grid .grid_item .grid_modal .info_btn:hover {
+  background: #042f61;
+  box-shadow:
+        inset +1px +1px 1px #fff8,
+        inset +1px -1px 1px #fff8,
+        inset -1px +1px 1px #fff8,
+        inset -1px -1px 1px #fff8;
+}
+
+.main .home_sect.projects .projects_grid .grid_item .grid_modal .info_btn:hover a {
+  color: white;
+}
+
+
+
+/* Part 5 - Contacts Section */
+.main .home_sect.contacts {
+  width: 80%;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: left;
+}
+
+.contact_container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.contact_container .contact_panel {
+  height: 80vh;
+  flex: 1;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: baseline;
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: +0px +5px 1px #0055,
+        inset +5px -1px 1px #0055,
+        inset -5px -1px 1px #0055,
+        inset -1px -5px 1px #0055,
+        inset -1px +5px 1px #0055;
+}
+
+.contact_container .contact_panel:nth-child(1) {max-width: 400px;}
+
+.contact_container .contact_panel .poster {
+  width: calc(100% - 30px);
+  height: 200px;
+  margin: 20px auto;
+  
+  border: 1px solid #0055;
+  border-radius: 10px;
+  position: relative;
+  box-shadow: +1px +1px 1px #0059,
+              +1px -1px 1px #0059,
+              -1px +1px 1px #0059,
+              -1px -1px 1px #0059;
+}
+
+.contact_container .contact_panel .contact_header {
+  font-size: 1rem;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.contact_container .contact_panel .contact_header .status_icon {
+  margin-right: 5px;
+  scale: 1.1;
+  color: var(--clr-green);
+}
+
+.contact_container .contact_panel .contact_media {
+  margin-top: auto;
+}
+
+.contact_icons {
+  margin: 5px auto 20px auto;
+}
+
+.contact_container .contact_panel .contact_form {
+  width: 100%;
+  padding: 20px;
+}
+
+.contact_container .contact_panel .contact_form .form_el {
+  width: 100%;
+}
+
+.contact_container .contact_panel .contact_form .contact_flex {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.contact_container .contact_panel .contact_form .contact_flex .form_el {
+  width: calc(50% - 5px);
+}
+
+.contact_container .contact_panel .contact_form .form_el label {
+  font-size: 1rem;
+  text-transform: uppercase;
+  text-decoration: underline;
+  color: var(--clr-black);
+}
+
+.contact_container .contact_panel .contact_form .form_el input {
+  width: 100%;
+  height: 30px;
+  text-indent: 10px;
+  font-size: 0.8rem;
+  
+  border-radius: 10px;
+  border: 1px solid gray;
+}
+
+.contact_container .contact_panel .contact_form .form_el textarea {
+  width: 100%;
+  height: 270px;
+  border-radius: 10px;
+  margin-bottom: 5px;
+  padding: 5px 10px;
+  font-size: 0.8rem;
+  
+  border: 1px solid gray;
+  resize: none;
+}
+
+.contact_container .contact_panel .contact_form .contact_btn {
+  width: 100%;
+  height: 35px;
+  border: 15px;
+  font-size: 1.3rem;
+
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  background: #0070f3;
+  color: white;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.contact_container .contact_panel .contact_form .contact_btn:hover {
+  font-size: 1.2rem;
+  transition: 0.3s;
+
+  background: #042f61;
+  color: white;
+  border: 1px solid black;
+  box-shadow:
+        inset +1px +1px 1px white,
+        inset +1px -1px 1px white,
+        inset -1px +1px 1px white,
+        inset -1px -1px 1px white;
+}
+
+@media screen and (max-width: 900px) {
+  .main .home_sect.contacts {width: 100%;}
+}

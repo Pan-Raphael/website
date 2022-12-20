@@ -1,0 +1,41 @@
+/* --- Static Website Design --- */
+.navbar {
+  width: 100vw;
+  height: 80px;
+  padding: 1rem 2rem;
+
+  position: fixed;
+  top: 0; left: 0;
+  display: flex;
+  z-index: 100;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--clr-white);
+  border-bottom: 1px solid #bbb;
+}
+
+.navbar-list {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+}
+
+.navbar-list a {
+  min-width: 100px;
+  padding: 3px;
+  padding-bottom: 4px;
+  font-size: 1rem;
+  margin: auto 1px;
+
+  color: #0070f3;
+  border: 1px solid rgb(175, 173, 173);
+  border-radius: 10px;
+  box-shadow: inset 0px 0px 10px #0070f3;
+}
+
+/* --- Dynamic Website Design --- */
+.navbar-list a:hover {
+  background-color: #1f436b;
+  color: white; cursor: pointer;
+  text-shadow: 1px 1px 1px black;
+}
