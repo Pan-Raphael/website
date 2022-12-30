@@ -1,7 +1,7 @@
 // Imports
+import {useState} from 'react'
 import Head from 'next/head'
 import Image from 'next/image'
-import Link from 'next/link'
 import styles from '../styles/home.module.css'
 import {FaLinkedin,FaGithub,FaFacebook} from 'react-icons/fa'
 import {TfiCheckBox} from 'react-icons/tfi'
@@ -9,6 +9,7 @@ import {
   SiUpwork,SiPostgresql,SiSqlite,SiMongodb,
   SiGraphql,SiPython,SiR,SiPowerbi,SiTableau,SiD3Dotjs
 } from 'react-icons/si'
+import useDownloader from "react-use-downloader"
 
 // Settings
 const URL_LINKEDIN = 'https://www.linkedin.com/in/panagiotis-xanthopoulos-997a791a6/'
@@ -24,6 +25,30 @@ const IMG_ABOUT_STYLE = {
 
 // Maincode
 export default function Home() {
+  const {download} = useDownloader()
+  const fileUrl = "/CV.docx"
+  const filename = "cv.docx"
+  const [formData,setFormData] = useState({name:'',mail:'',subj:'',msg:'',})
+
+  const onChange = ({target}) => {
+    setFormData(prev => ({...prev,[target.name]: target.value}))
+  }
+
+  const onSubmit = async e => {
+    e.preventDefault()
+    fetch('/api/contact',{
+      method:'POST',
+      body: JSON.stringify(formData),
+      headers: {
+        'Content-Type': "application/json",
+        'Accept': "application/json",
+      }
+    }).then(res => {
+      if (res.status === 200) {alert('Email Sent!')}
+    }).catch(console.log)
+  }
+  
+
   return (
     <div className={styles.container}>
       <Head>
@@ -69,7 +94,7 @@ export default function Home() {
                 interested in it for its own sake rather than the utility it had represented in the beginning.
               </p>
               <p className={styles.about_par}>
-                <Link href='/resume' target='blank'>Here</Link>, you can view a digital form of CV.
+                <a onClick={() => download(fileUrl,filename)}>Here</a>, you can view a digital form of CV.
               </p>
             </article>
           </header>
@@ -164,34 +189,27 @@ export default function Home() {
 
             <div className={styles.contact_panel}>
               <form className={styles.contact_form}>
-                <div className={styles.contact_flex}>
-                  <div className={styles.form_el}>
-                    <label htmlFor="name">Name</label>
-                    <input type="text" id='name'/>
-                  </div>
-                  
-                  <div className={styles.form_el}>
-                    <label htmlFor="phone">Phone</label>
-                    <input type="tel" id='phone'/>
-                  </div>
+                <div className={styles.form_el}>
+                  <label htmlFor="name">Name</label>
+                  <input type="text" id='name' name='name' value={formData.name} onChange={onChange}/>
                 </div>
                 
                 <div className={styles.form_el}>
                   <label htmlFor="email">Email</label>
-                  <input type="email" id='email'/>
+                  <input type="email" id='email' name='mail' value={formData.mail} onChange={onChange}/>
                 </div>
                 
                 <div className={styles.form_el}>
                   <label htmlFor="subject">Subject</label>
-                  <input type="text" id='subject'/>
+                  <input type="text" id='subject' name='subj' value={formData.subj} onChange={onChange}/>
                 </div>
                 
                 <div className={styles.form_el}>
                   <label htmlFor="message">Message</label>
-                  <textarea name="message" id="message" cols="30" rows="8"/>
+                  <textarea name="msg" id="message" cols="30" rows="8" value={formData.msg} onChange={onChange}/>
                 </div>
 
-                <button className={styles.contact_btn}>Send Message</button>
+                <button className={styles.contact_btn} onClick={onSubmit}>Send Message</button>
               </form>
             </div>
           </div>

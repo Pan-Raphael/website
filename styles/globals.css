@@ -29,7 +29,6 @@ body {
   overscroll-behavior-y: none;
   background-color: var(--clr-white);
   color: var(--clr-black);
-  text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;

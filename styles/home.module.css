@@ -130,6 +130,7 @@
 
 .main .home_sect.about .about_header p.about_par a:hover {
   text-decoration: underline;
+  cursor: pointer;
 }
 
 
@@ -216,6 +217,7 @@
   display: flex;
   justify-content: center;
   align-items: left;
+  text-align: center;
 }
 
 .main .home_sect.projects .projects_grid {
@@ -226,7 +228,7 @@
   display: grid;
   grid-template-columns: 330px 330px;
   grid-template-rows: auto;
-  justify-content: center;
+  justify-content: left;
   align-items: baseline;
 }
 
@@ -316,7 +318,7 @@
 
 
 
-/* Part 5 - Contacts Section */
+/* Part 5 - Contact Section */
 .main .home_sect.contacts {
   width: 80%;
   flex-direction: column;
@@ -392,12 +394,14 @@
   width: 100%;
 }
 
+/* 
 .contact_container .contact_panel .contact_form .contact_flex {
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: baseline;
 }
+*/
 
 .contact_container .contact_panel .contact_form .contact_flex .form_el {
   width: calc(50% - 5px);
@@ -408,6 +412,7 @@
   text-transform: uppercase;
   text-decoration: underline;
   color: var(--clr-black);
+  text-align: left;
 }
 
 .contact_container .contact_panel .contact_form .form_el input {

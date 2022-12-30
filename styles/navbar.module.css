@@ -12,6 +12,7 @@
   align-items: center;
   background: var(--clr-white);
   border-bottom: 1px solid #bbb;
+  text-align: center;
 }
 
 .navbar-list {
